@@ -36,16 +36,16 @@ const Layout = ({ children }) => {
   ];
   return (
     <>
-      <div className="bg-[#E9E7EF] min-h-screen">
+      <div className="bg-[#E9E7EF] min-h-screen ">
         <aside
           style={{
-            width: open ? "300px" : "0px",
-            transition: "width 0.25s ease-in-out",
+            width: open ? "300px" : "80px",
+            transition: "0.3s ease-in-out",
           }}
-          className="bg-white h-full fixed top-0 left-0"
+          className="bg-white h-full fixed top-0 left-0 overflow-hidden"
         >
           <div className="p-8 flex items-center justify-center">
-            <img src={Logo} className="mb-2" alt="Logo" />
+            {open && <img src={Logo} alt="Logo" className="w-40" />}{" "}
           </div>
           <div className="flex items-center justify-center gap-4 ">
             <img
@@ -53,26 +53,28 @@ const Layout = ({ children }) => {
               className="rounded-full shadow"
               alt="Logo Avatar"
             />
-            <h1 className="text-xl font-semibold">Super Admin</h1>
+            {open && <h1 className="text-xl font-semibold">Super Admin</h1>}
           </div>
 
-          <div className="p-4">
+          <div className={`${open ? "p-4" : "mt-4 p-2"}`}>
             {menus.map((menu) => (
               <button
                 onClick={() => console.log(menu.name)}
-                className={
-                  "flex w-full items-center gap-4 p-2 cursor-pointer text-green-900 rounded-md hover:bg-green-900 hover:text-white"
-                }
+                className={`flex items-center gap-4 w-full  cursor-pointer text-green-900 ${
+                  open ? "rounded-md p-3" : "rounded-full  p-3"
+                } hover:bg-green-900 hover:text-white`}
               >
-                <i class={menu.icon + " text-2xl"}></i>
-                <span className="text-xl">{menu.name}</span>
+                <i
+                  class={`${menu.icon} ${!open ? "text-4xl" : "text-2xl"}`}
+                ></i>
+                {open && <span>{menu.name}</span>}{" "}
               </button>
             ))}
           </div>
         </aside>
         <section
           style={{
-            marginLeft: open ? "300px" : "0px",
+            marginLeft: open ? "300px" : "80px",
             transition: "0.3s ease-in-out",
             // padding: "20px",
           }}
