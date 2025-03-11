@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Logo from "/images/logo-body.png";
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
@@ -13,7 +14,11 @@ const Layout = ({ children }) => {
             transition: "width 0.25s ease-in-out",
           }}
           className="bg-white h-full fixed top-0 left-0"
-        ></aside>
+        >
+          <div className="p-8 flex items-center justify-center">
+            <img src={Logo} className="" alt="" srcset="" />
+          </div>
+        </aside>
         <section
           style={{
             marginLeft: open ? "300px" : "0px",
