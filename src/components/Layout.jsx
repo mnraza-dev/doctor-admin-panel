@@ -3,6 +3,7 @@ import { useState } from "react";
 import Logo from "/images/logo-body.png";
 import AdminLogoAvatar from "/images/admin.png";
 import { Link, useLocation } from "react-router-dom";
+import { MessagesSquareIcon } from "lucide-react";
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
@@ -88,10 +89,22 @@ const Layout = ({ children }) => {
             <div>
               <button
                 onClick={() => setOpen(!open)}
-                className=" cursor-pointer hover:bg-gray-100 w-10 h-10 rounded-full "
+                className="mr-4 cursor-pointer hover:bg-gray-100 w-10 h-10 rounded-full "
               >
                 <i class="ri-menu-3-line"></i>
               </button>
+              
+               
+                <Link className="px-2 py-2 hover:text-green-900 " to={"/"}>
+                <i class="ri-global-line"></i>  Go to Website
+                </Link>
+              
+            </div>
+            <div>
+            
+           <Link to="/chat" className="px-2 py-2 hover:text-green-900 flex items-center gap-2"> <MessagesSquareIcon /> Chat with Us</Link>
+
+
             </div>
             <div>
               <h1>Two</h1>
