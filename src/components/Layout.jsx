@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Logo from "/images/logo-body.png";
+import AdminLogoAvatar from "/images/admin.png";
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
@@ -16,7 +17,11 @@ const Layout = ({ children }) => {
           className="bg-white h-full fixed top-0 left-0"
         >
           <div className="p-8 flex items-center justify-center">
-            <img src={Logo} className="" alt="" srcset="" />
+            <img src={Logo} className="mb-2" alt="Logo" />
+          </div>
+          <div className="flex items-center justify-center gap-4 ">
+            <img src={AdminLogoAvatar} className="rounded-full shadow" alt="Logo Avatar" />
+            <h1 className="text-xl font-semibold">Super Admin</h1>
           </div>
         </aside>
         <section
