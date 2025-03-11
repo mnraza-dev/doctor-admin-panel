@@ -5,7 +5,35 @@ import AdminLogoAvatar from "/images/admin.png";
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
+  const menus = [
+    {
+      name: "Dashboard",
+      icon: "ri-dashboard-3-line",
+      path: "/dashboard",
+    },
+    {
+      name: "Device",
+      icon: "ri-macbook-line text-2xl",
+      path: "/device",
+    },
+    {
+      name: "Patient",
+      icon: "ri-hotel-bed-fill",
+      path: "/patient",
+    },
+    {
+      name: "Doctor",
+      icon: "ri-nurse-fill",
+      path: "/doctor",
+    },
+    {
+      name: "User",
+      icon: "ri-user-3-line",
+      path: "/user",
+    },
 
+    // "ri-macbook-line text-2xl"
+  ];
   return (
     <>
       <div className="bg-[#E9E7EF] min-h-screen">
@@ -29,43 +57,17 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="p-4">
-            <button
-              onClick={() => console.log("Dashboard")}
-              className={
-                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
-              }
-            >
-              <i class="ri-dashboard-3-line text-2xl"></i>
-              <span className="text-xl">Dashboard</span>
-            </button>
-
-            <button
-              onClick={() => console.log("Device")}
-              className={
-                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
-              }
-            >
-              <i class="ri-macbook-line text-2xl"></i>
-              <span className="text-xl">Device</span>
-            </button>
-            <button
-              onClick={() => console.log("Doctor")}
-              className={
-                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
-              }
-            >
-              <i class="ri-nurse-fill text-2xl"></i>
-              <span className="text-xl">Doctor</span>
-            </button>
-            <button
-              onClick={() => console.log("Patient")}
-              className={
-                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
-              }
-            >
-              <i class="ri-hotel-bed-fill text-2xl"></i>
-              <span className="text-xl">Patient</span>
-            </button>
+            {menus.map((menu) => (
+              <button
+                onClick={() => console.log(menu.name)}
+                className={
+                  "flex w-full items-center gap-4 p-2 cursor-pointer text-green-900 rounded-md hover:bg-green-900 hover:text-white"
+                }
+              >
+                <i class={menu.icon + " text-2xl"}></i>
+                <span className="text-xl">{menu.name}</span>
+              </button>
+            ))}
           </div>
         </aside>
         <section
