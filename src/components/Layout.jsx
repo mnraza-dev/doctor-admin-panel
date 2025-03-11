@@ -2,9 +2,13 @@ import React from "react";
 import { useState } from "react";
 import Logo from "/images/logo-body.png";
 import AdminLogoAvatar from "/images/admin.png";
+import { Link, useLocation } from "react-router-dom";
+
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
+  const location = useLocation();
+  
   const menus = [
     {
       name: "Dashboard",
@@ -58,8 +62,8 @@ const Layout = ({ children }) => {
 
           <div className={`${open ? "p-4" : "mt-4 p-2"}`}>
             {menus.map((menu) => (
-              <button
-                onClick={() => console.log(menu.name)}
+              <Link
+                to={menu.path}
                 className={`flex items-center gap-4 w-full  cursor-pointer text-green-900 ${
                   open ? "rounded-md p-3" : "rounded-full  p-3"
                 } hover:bg-green-900 hover:text-white`}
@@ -68,7 +72,7 @@ const Layout = ({ children }) => {
                   class={`${menu.icon} ${!open ? "text-4xl" : "text-2xl"}`}
                 ></i>
                 {open && <span>{menu.name}</span>}{" "}
-              </button>
+              </Link>
             ))}
           </div>
         </aside>
