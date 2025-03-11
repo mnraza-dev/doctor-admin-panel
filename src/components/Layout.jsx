@@ -4,9 +4,12 @@ import Logo from "/images/logo-body.png";
 import AdminLogoAvatar from "/images/admin.png";
 import { Link, useLocation } from "react-router-dom";
 import { MessagesSquareIcon } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
+  const [isLanguageSwitchOpen, setIsLanguageSwitchOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const location = useLocation();
 
   const menus = [
@@ -32,6 +35,13 @@ const Layout = ({ children }) => {
     },
 
     // "ri-macbook-line text-2xl"
+  ];
+  const languages = [
+    { code: "en", name: "English", flag: "https://flagcdn.com/w40/us.png" },
+    { code: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
+    { code: "es", name: "Español", flag: "https://flagcdn.com/w40/es.png" },
+    { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w40/de.png" },
+    { code: "ar", name: "العربية", flag: "https://flagcdn.com/w40/sa.png" },
   ];
   return (
     <>
@@ -93,21 +103,26 @@ const Layout = ({ children }) => {
               >
                 <i class="ri-menu-3-line"></i>
               </button>
-              
-               
-                <Link className="px-2 py-2 hover:text-green-900 " to={"/"}>
-                <i class="ri-global-line"></i>  Go to Website
-                </Link>
-              
+
+              <Link className="px-2 py-2 hover:text-green-900 " to={"/"}>
+                <i class="ri-global-line"></i> Go to Website
+              </Link>
             </div>
             <div>
-            
-           <Link to="/chat" className="px-2 py-2 hover:text-green-900 flex items-center gap-2"> <MessagesSquareIcon /> Chat with Us</Link>
-
-
+              <Link
+                to="/chat"
+                className="px-2 py-2 hover:text-green-900 flex items-center gap-2"
+              >
+                <MessagesSquareIcon /> Chat with Us
+              </Link>
             </div>
             <div>
-              <h1>Two</h1>
+              <LanguageSwitcher
+                isLanguageSwitchOpen={isLanguageSwitchOpen}
+                setIsLanguageSwitchOpen={setIsLanguageSwitchOpen}
+                selectedLanguage={selectedLanguage}
+                setSelectedLanguage={setSelectedLanguage}
+              />
             </div>
           </nav>
           <main className="p-6">
