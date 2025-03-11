@@ -20,8 +20,52 @@ const Layout = ({ children }) => {
             <img src={Logo} className="mb-2" alt="Logo" />
           </div>
           <div className="flex items-center justify-center gap-4 ">
-            <img src={AdminLogoAvatar} className="rounded-full shadow" alt="Logo Avatar" />
+            <img
+              src={AdminLogoAvatar}
+              className="rounded-full shadow"
+              alt="Logo Avatar"
+            />
             <h1 className="text-xl font-semibold">Super Admin</h1>
+          </div>
+
+          <div className="p-4">
+            <button
+              onClick={() => console.log("Dashboard")}
+              className={
+                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
+              }
+            >
+              <i class="ri-dashboard-3-line text-2xl"></i>
+              <span className="text-xl">Dashboard</span>
+            </button>
+
+            <button
+              onClick={() => console.log("Device")}
+              className={
+                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
+              }
+            >
+              <i class="ri-macbook-line text-2xl"></i>
+              <span className="text-xl">Device</span>
+            </button>
+            <button
+              onClick={() => console.log("Doctor")}
+              className={
+                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
+              }
+            >
+              <i class="ri-nurse-fill text-2xl"></i>
+              <span className="text-xl">Doctor</span>
+            </button>
+            <button
+              onClick={() => console.log("Patient")}
+              className={
+                "flex w-full items-center gap-4 p-2 text-green-900 rounded-md hover:bg-green-900 hover:text-white"
+              }
+            >
+              <i class="ri-hotel-bed-fill text-2xl"></i>
+              <span className="text-xl">Patient</span>
+            </button>
           </div>
         </aside>
         <section
