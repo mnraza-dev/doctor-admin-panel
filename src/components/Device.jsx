@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "./Layout";
 
 const Device = () => {
   return (
-    <div>Device</div>
-  )
-}
+    <Layout>
+      <h1>Device</h1>
+    </Layout>
+  );
+};
 
-export default Device
+export default Device;

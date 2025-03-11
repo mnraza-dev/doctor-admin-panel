@@ -30,11 +30,7 @@ const Layout = ({ children }) => {
       icon: "ri-nurse-fill",
       path: "/doctor",
     },
-    {
-      name: "User",
-      icon: "ri-user-3-line",
-      path: "/user",
-    },
+    
 
     // "ri-macbook-line text-2xl"
   ];

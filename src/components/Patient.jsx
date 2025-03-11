@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Layout from "./Layout";
 
 const Patient = () => {
-  return (
-    <div>Patient</div>
-  )
-}
+  return <Layout>Patient</Layout>;
+};
 
-export default Patient
+export default Patient;
