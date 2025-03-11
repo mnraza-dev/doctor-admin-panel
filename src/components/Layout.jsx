@@ -4,11 +4,10 @@ import Logo from "/images/logo-body.png";
 import AdminLogoAvatar from "/images/admin.png";
 import { Link, useLocation } from "react-router-dom";
 
-
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(true);
   const location = useLocation();
-  
+
   const menus = [
     {
       name: "Dashboard",
@@ -30,7 +29,6 @@ const Layout = ({ children }) => {
       icon: "ri-nurse-fill",
       path: "/doctor",
     },
-    
 
     // "ri-macbook-line text-2xl"
   ];
@@ -60,9 +58,16 @@ const Layout = ({ children }) => {
             {menus.map((menu) => (
               <Link
                 to={menu.path}
-                className={`flex items-center gap-4 w-full  cursor-pointer text-green-900 ${
+                className={`flex items-center gap-4 w-full mb-1 cursor-pointer text-green-900 ${
                   open ? "rounded-md p-3" : "rounded-full  p-3"
                 } hover:bg-green-900 hover:text-white`}
+                style={{
+                  color: location.pathname === menu.path ? "white" : "",
+                  backgroundColor:
+                    location.pathname === menu.path
+                      ? "oklch(0.393 0.095 152.535)"
+                      : "",
+                }}
               >
                 <i
                   class={`${menu.icon} ${!open ? "text-4xl" : "text-2xl"}`}
