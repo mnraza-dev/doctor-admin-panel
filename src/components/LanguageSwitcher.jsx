@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-
 const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w40/us.png" },
   { code: "fr", name: "Français", flag: "https://flagcdn.com/w40/fr.png" },
